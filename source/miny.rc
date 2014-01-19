@@ -1,0 +1,380 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winresrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Czech resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CSY)
+#ifdef _WIN32
+LANGUAGE LANG_CZECH, SUBLANG_DEFAULT
+#pragma code_page(1250)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+1                       ICON    DISCARDABLE     "miny.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+20                      BITMAP  MOVEABLE PURE   "mine1.bmp"
+21                      BITMAP  MOVEABLE PURE   "mine3.bmp"
+22                      BITMAP  MOVEABLE PURE   "mine2.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+3 ACCELERATORS MOVEABLE PURE 
+BEGIN
+    VK_ESCAPE,      112,                    VIRTKEY 
+    VK_F5,          106,                    VIRTKEY 
+    VK_F6,          107,                    VIRTKEY 
+    VK_F2,          100,                    VIRTKEY 
+    VK_F3,          111,                    VIRTKEY 
+    VK_F4,          116,                    VIRTKEY 
+    "^N",           100,                    ASCII   
+    VK_ADD,         101,                    VIRTKEY 
+    VK_SUBTRACT,    102,                    VIRTKEY 
+    "^S",           109,                    ASCII   
+    "^V",           104,                    ASCII   
+    "^D",           103,                    ASCII   
+    "^G",           108,                    ASCII   
+    "X",            105,                    VIRTKEY, ALT
+    VK_NUMPAD1,     401,                    VIRTKEY 
+    VK_NUMPAD2,     402,                    VIRTKEY 
+    VK_NUMPAD3,     403,                    VIRTKEY 
+    VK_NUMPAD4,     404,                    VIRTKEY 
+    VK_NUMPAD5,     405,                    VIRTKEY 
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "&Game"
+    BEGIN
+        MENUITEM "&New game\tF2",               100
+        MENUITEM "&High scores...\tF3",         111
+        MENUITEM "&Colors...\tF4",              116
+        MENUITEM "O&ptions...",                 118
+        MENUITEM SEPARATOR
+        MENUITEM "Zoom &in\t+",                 101
+        MENUITEM "Zoom &out\t-",                102
+        MENUITEM SEPARATOR
+        MENUITEM "Remove settings",             110
+        MENUITEM "Remove hiscores",             117
+        MENUITEM SEPARATOR
+        POPUP "&Language"
+        BEGIN
+            MENUITEM ".",                           29999
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Exit\tAlt+X",                105
+    END
+    POPUP "&Size"
+    BEGIN
+        MENUITEM "&Tri Field",                  114
+        MENUITEM "&Quad Field",                 115
+        MENUITEM SEPARATOR
+        MENUITEM "&Beginner",                   1209
+        MENUITEM "&Intermediate",               2315
+        MENUITEM "&Expert",                     3218
+        MENUITEM SEPARATOR
+        MENUITEM "&Custom...\tF5",              106
+    END
+    POPUP "&Mines"
+    BEGIN
+        MENUITEM "12%",                         12
+        MENUITEM "15%",                         15
+        MENUITEM "18%",                         18
+        MENUITEM "21%",                         21
+        MENUITEM "24%",                         24
+        MENUITEM SEPARATOR
+        MENUITEM "&Custom...\tF6",              107
+    END
+    POPUP "&Level"
+    BEGIN
+        MENUITEM "Very easy",                   201
+        MENUITEM "Easy",                        202
+        MENUITEM "Medium",                      203
+        MENUITEM "Hard",                        204
+        MENUITEM "Very hard",                   205
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Readme",                     120
+        MENUITEM "&About...",                   121
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+CUSTOM DIALOG DISCARDABLE  41, 26, 95, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Custom"
+FONT 10, "MS Shell Dlg"
+BEGIN
+    EDITTEXT        103,64,5,15,12
+    EDITTEXT        104,64,26,15,12
+    EDITTEXT        105,64,49,15,12
+    DEFPUSHBUTTON   "OK",1,12,71,32,14
+    PUSHBUTTON      "Cancel",2,56,71,30,14
+    LTEXT           "Width:",511,11,6,50,8
+    LTEXT           "Height:",510,11,28,50,8
+    LTEXT           "Mines:",512,11,50,50,8
+    LTEXT           "%",-1,82,51,6,8
+END
+
+HISCORE DIALOG DISCARDABLE  11, 17, 280, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Mines - High Scores"
+FONT 10, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,207,120,48,13
+    LTEXT           "Name",513,10,4,51,8
+    CTEXT           "Date",514,66,4,52,8
+    CTEXT           "Size",515,138,4,33,8
+    CTEXT           "Level",516,171,4,34,8
+    CTEXT           "Time",517,216,4,21,8
+    CTEXT           "Rate",518,240,4,35,8
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,212,3,63,9
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,134,3,73,9
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,4,3,126,9
+    RTEXT           "Mines:",519,3,123,40,8
+    PUSHBUTTON      "12%",212,50,122,24,11
+    PUSHBUTTON      "15%",215,78,122,24,11
+    PUSHBUTTON      "18%",218,106,122,24,11
+    PUSHBUTTON      "21%",221,134,122,24,11
+    PUSHBUTTON      "24%",224,162,122,24,11
+END
+
+NAME DIALOG DISCARDABLE  40, 25, 153, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "High score"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Your name :",520,5,15,55,8
+    EDITTEXT        101,65,13,72,12
+    DEFPUSHBUTTON   "Show scores",534,49,36,64,14
+    PUSHBUTTON      "OK",535,5,36,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,117,36,32,14
+END
+
+ABOUT DIALOG DISCARDABLE  52, 18, 123, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    CTEXT           "(C) 2001-2011  Petr Lastovicka",501,0,54,123,10
+    CTEXT           "Version",503,38,28,28,9
+    CTEXT           "Clever Mines",-1,5,4,112,12,SS_CENTERIMAGE | SS_SUNKEN
+    ICON            1,-1,13,24,20,20
+    PUSHBUTTON      "OK",IDOK,42,98,39,14
+    ICON            1,-1,89,24,20,20
+    LTEXT           "4.0",-1,68,28,12,8
+    PUSHBUTTON      "http://petr.lastovicka.sweb.cz",123,7,73,109,17
+END
+
+COLORS DIALOG DISCARDABLE  5, 24, 194, 147
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Colors"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,140,10,40,18
+    PUSHBUTTON      "Cancel",IDCANCEL,140,42,40,14
+    CONTROL         "",101,"Button",BS_OWNERDRAW,5,12,14,14
+    CONTROL         "",102,"Button",BS_OWNERDRAW,25,12,14,14
+    CONTROL         "",103,"Button",BS_OWNERDRAW,45,12,14,14
+    CONTROL         "",104,"Button",BS_OWNERDRAW,65,12,14,14
+    CONTROL         "",105,"Button",BS_OWNERDRAW,85,12,14,14
+    CONTROL         "",106,"Button",BS_OWNERDRAW,105,12,14,14
+    CONTROL         "",107,"Button",BS_OWNERDRAW,5,42,14,14
+    CONTROL         "",108,"Button",BS_OWNERDRAW,25,42,14,14
+    CONTROL         "",109,"Button",BS_OWNERDRAW,45,42,14,14
+    CONTROL         "",110,"Button",BS_OWNERDRAW,65,42,14,14
+    CONTROL         "",111,"Button",BS_OWNERDRAW,85,42,14,14
+    CONTROL         "",112,"Button",BS_OWNERDRAW,105,42,14,14
+    CONTROL         "",116,"Button",BS_OWNERDRAW,166,108,14,14
+    CONTROL         "",118,"Button",BS_OWNERDRAW,166,90,14,14
+    CONTROL         "",113,"Button",BS_OWNERDRAW,60,90,14,14
+    CONTROL         "",100,"Button",BS_OWNERDRAW,60,72,14,14
+    CONTROL         "",115,"Button",BS_OWNERDRAW,166,126,14,14
+    CONTROL         "",117,"Button",BS_OWNERDRAW,166,72,14,14
+    LTEXT           "1",-1,10,2,8,8
+    LTEXT           "2",-1,30,2,8,8
+    LTEXT           "3",-1,50,2,8,8
+    LTEXT           "4",-1,70,2,8,8
+    LTEXT           "5",-1,90,2,8,8
+    LTEXT           "6",-1,110,2,8,8
+    LTEXT           "7",-1,10,32,8,8
+    LTEXT           "8",-1,30,32,8,8
+    LTEXT           "9",-1,50,32,8,8
+    LTEXT           "10",-1,68,32,8,8
+    LTEXT           "11",-1,88,32,8,8
+    LTEXT           "12",-1,108,32,8,8
+    LTEXT           "Opened block",521,5,74,50,8
+    LTEXT           "Field",522,5,92,50,8
+    LTEXT           "Background",523,90,74,72,12
+    LTEXT           "Incorrect mark",524,90,110,72,12
+    LTEXT           "Speed graph",525,90,92,72,8
+    LTEXT           "Fatal mine",526,90,128,72,8
+    CONTROL         "",121,"Button",BS_OWNERDRAW,60,108,14,14
+    CONTROL         "",120,"Button",BS_OWNERDRAW,60,126,14,14
+    LTEXT           "Grid",527,5,110,50,8
+    LTEXT           "Text",528,5,128,50,8
+END
+
+OPTIONS DIALOG DISCARDABLE  18, 13, 163, 99
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    CONTROL         "easy start, first click won't die",529,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,10,6,152,12
+    CONTROL         "flags are not clickable",530,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,22,153,12
+    CONTROL         "button down",531,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,10,52,70,12
+    CONTROL         "button up",532,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    85,52,68,12
+    DEFPUSHBUTTON   "OK",IDOK,35,76,35,16
+    PUSHBUTTON      "Cancel",IDCANCEL,90,76,35,16
+    GROUPBOX        "Open field when:",533,5,42,154,26
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""winresrc.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,0,3,4
+ PRODUCTVERSION 0,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040504b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " \0"
+            VALUE "FileDescription", "Clever Mines\0"
+            VALUE "FileVersion", "4.0\0"
+            VALUE "InternalName", "\0"
+            VALUE "LegalCopyright", "© 2004-2013 Petr Laštovièka\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "miny.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "\0"
+            VALUE "ProductVersion", "\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x405, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "HISCORE", DIALOG
+    BEGIN
+        RIGHTMARGIN, 276
+    END
+
+    "COLORS", DIALOG
+    BEGIN
+        RIGHTMARGIN, 180
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Czech resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

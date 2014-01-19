@@ -1,0 +1,70 @@
+Nápovìda k programu Miny
+------------------------
+Cílem hry je odkrýt všechna políèka, na kterých není mina. Políèka se odkrývají pomocí levého tlaèítka myši. Po odkrytí se zobrazí èíslo, které znamená poèet min na sousedních políèkách. 
+Pravým tlaèítkem oznaèujete políèka, na kterých jsou miny. Jestliže jsou kolem èísla už všechny miny oznaèeny, pak lze rychle odkrýt zbylá okolní políèka tak, že klepnete na èíslo levým nebo pravým tlaèítkem. 
+Pokud je v pravém dolním rohu zobrazen otazník, pak to znamená, že o žádném políèku nelze s jistotou øíci, že na nìm není mina. V takové situaci se vám poèítaè snaží pomoct a jestliže klepnete na minu, pak se ji pokusí pøemístit nìkam jinam. 
+Novou hru zaènete klepnutím do oblasti nad hrací plochou nebo stisknutím F2.
+
+Obtížnost
+---------
+Jestliže odkryjete políèko, o kterém nelze rozhodnout, jestli na nìm je nebo není mina, pak výsledek závisí na zvolené obtížnosti:
+1. nejlehèí - nikdy nevybouchnete
+2. lehká    - když odkrývané políèko sousedí s èíslem, pak nevybouchnete
+3. støední  - rozhodne se náhodnì
+4. tìžká    - vždy vybouchnete
+5. nejtìžší - vždy vybouchnete
+Pøi nejtìžší obtížnosti nesmíte v situacích oznaèených otazníkem odkrýt políèko, které nesousedí s žádným èíslem. Každá hra se dá vyhrát i pøi nejtìžší obtížnosti.
+
+Tabulky nejlepších èasù
+-----------------------
+Tabulky s nejlepšími èasy existují jen pro množství min 12,15,18,21,24 procent. Pokud si zvolíte jiné množství min, pak se do žádné tabulky nezapíšete. 
+Výsledky jsou setøídìny podle (rychlost+výška*šíøka/6). Graf rychlosti se zobrazuje i bìhem hry. Rychlost se poèítá jako poèet kliknutí myši za sekundu krát 1000. 
+
+ Nejlepší výsledky autora hry: 
+12% trojúhleníkové: 1250
+24% trojúhleníkové: 520 
+12% ètvercové: 1800
+24% ètvercové: 960
+
+Struèný popis algoritmu (urèeno jen pro programátory :)
+-------------------------------------------------------
+ Cílem algoritmu je zmìnit políèko. To znamená, že pokud je na políèku mina, pak se mina pøesune jinam, a pokud na políèku není mina, pak se na nìj odnìkud mina pøesune. Samozøejmì se pøitom nesmìjí zmìnit èísla na odkrytých políèkách. Èlovìk nesmí v žádném pøípadì poznat, že poèítaè s minami hýbe. Pokud vybouchne, pak si musí myslet, že na políèku byla mina už od zaèátku hry a ne že ji tam poèítaè schválnì podstrèil.  
+ Po nalezení správné kombinace min se obvykle stává, že se zmìní celkový poèet min. V takových pøípadech se pøidávají nebo ubírají miny na vnitøních políèkách. Vnitøní políèka jsou taková políèka, která nesousedí z žádným odkrytým polem. Proto je možné na nich bez omezení pøidávat nebo ubírat miny. Je tøeba, aby byl zachován celkový poèet min, který je zobrazen na stavovém øádku. Problém nastává ke konci hry, kdy už nejsou k dispozici vnitøní políèka. Pak se musí hledat takové kombinace, pøi které se poèet min nemìní.    Základem algoritmu je backtracking. Na zaèátku funkce se na políèku dá nebo odebere mina. Na konci funkce se vše vrátí do pùvodního stavu. Každé zmìnìné políèko se musí uzamknout, aby se pøi rekurzivním volání funkce nemohlo políèko zmìnit vícekrát a aby se algoritmus nezacyklil. Pøidáním nebo odebráním miny se èísla na sousedních odkrytých políèkách zvýší nebo sníží o jedna. Všechna odkrytá políèka, u nichž èíslo na obrazovce nesouhlasí s poètem sousedních min, se ukládají do spojového seznamu. Jestliže je tento seznam prázdný, pak byla nalezena pøípustná kombinace a algoritmus úspìšnì skonèí. Ještì je tøeba pøi návratu z rekurze vytvoøit seznam zmìnìných polí. 
+ Jakmile je nìjaké políèko oznaèeno jako definitivní, je zároveò také uzamèeno. To znamená, že pøi backtrackingu se nebudou zbyteènì mìnit políèka, která už jsou definitivní. Aby se snížil poèet kombinací, které algoritmus bude postupnì zkoušet, je potøeba uzamykat doèasnì ještì další políèka. Pøi pøesunu jedné miny se obvykle stává, že to znemožní zmìny na jiných sousedních políèkách. Taková políèka se zamknou. (Navíc se do spojového seznamu uchovávají políèka, kde došlo k zamknutí, aby se pøi návratu z backtrackingu mohla zase odemknout.) 
+ Heuristiky jsou následující: Když jsou kolem odkrytého políèka uzamèeny všechny miny, pak se zamknou také všechna volná políèka. Naopak když jsou kolem odkrytého políèka uzamèena všechna volná políèka, pak se zamknou také všechny miny. Když se stane, že byla u odkrytého políèka pøidána mina a zároveò není k dispozici nezamèená mina, která by se dala odebrat, pak se backtracking musí vrátit o krok zpìt. Podobnì když byla u odkrytého políèka odebrána mina a není k dispozici nezamèené volné políèko, pak se backtracking musí také vrátit o krok zpìt. Jestliže se kolem odkrytého políèka poèet pøidaných min rovná poètu nezamèených min, pak se nezamèené miny hned odeberou. Jestliže se kolem odkrytého políèka poèet odebraných min rovná poètu nezamèených volných políèek, pak se na nezamèená volná políèka pøidají miny.
+
+ Po každém tahu se prochází celá hrací plocha. Na každé políèko se zavolá funkce invert, a pokud se miny nepodaøí pøerovnat, pak se políèko oznaèí jako definitivní. Funkce invert se volá jen na políèkách, která sousedí s nìjakým èíslem. Jestliže je nalezeno nìjaké pøerovnání min, pak se u všech zmìnìných polí nastaví hodnota unknown na true a pøi procházení zbytku hrací plochy se tato políèka nemusejí znovu testovat.
+ Jednoduché pøípady se zpracují ještì pøed spuštìním backtrackingu - v proceduøe setDef. Pokud je napøíklad na odkrytém políèku èíslo 2 a už jsou definitivní 2 miny, pak víme, že zbylá okolní políèka jsou urèitì bez min. Na druhou stranu když kolem èísla 2 jsou právì 2 neodkrytá políèka, pak na nich musejí být miny.
+ Dvì políèka jsou ekvivalentní, když sousedí se stejnými odkrytými políèky. Zároveò na obou je nebo není mina. Algoritmus provádí všechny výpoèty jen s jedním z ekvivalentních políèek. Do druhého políèka se výsledek jen okopíruje a tím se ušetøí dost èasu.
+ Jestliže jsou na všech definitivních políèkách miny, pak èlovìk musí hádat. Takové situace jsou oznaèeny otazníkem v pravém dolním rohu. Pokud se v takové chvíli èlovìk strefí na minu, pak se poèítaè pokusí s minou uhnout a to i pøi nejtìžší obtížnosti.
+
+
+Co je nového
+------------
+    1.1999 - verze pro DOS
+    8.2001 - verze pro Windows
+   11.2001 - zobrazení grafu rychlosti hráèe, tabulka nejlepších èasù
+    1.2002 - složitìjší (rychlejší) algoritmus
+26.11.2002 - trojúhelníkové pole, barvy
+22.12.2002 - kolem prvního kliknutí se odeberou miny
+ 14.1.2003 - na konci hry se oznaèkují všechny miny
+ 15.1.2003 - 10 tabulek nejlepších èasù, lze zmìnit barvu møížky
+  5.2.2003 - možnosti, odkrývání políèka pøi uvolnìní tlaèítka
+19.10.2003 - pøi jiné velikosti fontu se chybnì zobrazovaly texty
+ 24.3.2004 - anglický pøeklad
+
+
+Licence
+-------
+Na tento program se vztahuje licence "GNU General Public License". Zde jsou uvedeny jen nejdùležitìjší body. Celé její znìní (33KB, v angliètinì) lze stáhnout z autorovy webové stránky nebo http://opensource.org/licenses. 
+1) Program je zdarma. Je povoleno ho kopírovat nebo distribuovat na CD, tøeba spolu s jinými programy. 
+2) Program si mùžete pro vlastní potøebu upravit. Také mùžete èásti zdrojového kódu použít do svých vlastních programù. V obou pøípadech musíte splnit následující požadavky:
+ a) Nesmíte zmìnit nebo odstranit tuto licenci.
+ b) Nesmíte smazat jméno pùvodního autora.
+ c) Zdokumentujete všechny provedené zmìny a u každé zmìny uvedete datum.
+ d) Zdrojové kódy (vèetnì vašich úprav a rozšíøení) zdarma zveøejníte na internetu. 
+3) Program je bez záruky. 
+
+http://petr.lastovicka.sweb.cz
+
+(C) 2.12.2005  Petr Laštovièka
