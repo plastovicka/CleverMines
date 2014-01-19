@@ -1,0 +1,101 @@
+13=Miny.txt
+
+400=&Game
+100=&New game\tF2
+111=&High scores...\tF3
+116=&Colors...\tF4
+118=O&ptions...
+101=Zoom &in\t+
+102=Zoom &out\t-
+110=Remove settings
+117=Remove hiscores
+401=&Language
+105=&Exit\tAlt+X
+
+402=&Size
+114=&Tri Field
+115=&Quad Field
+450=&Beginner
+451=&Intermediate
+452=&Expert
+106=&Custom...\tF5
+
+403=&Mines
+12=12%
+15=15%
+18=18%
+21=21%
+24=24%
+107=&Custom...\tF6
+
+404=&Level
+201=Very easy
+202=Easy
+203=Medium
+204=Hard
+205=Very hard
+
+405=&Help
+120=&Readme
+121=&About...
+
+612=Custom
+511=Width:
+510=Height:
+512=Mines:
+1=OK
+2=Cancel
+
+607=High scores - 
+608=triangular field
+609=rectangular field
+513=Name
+514=Date
+515=Size
+516=Level
+517=Time
+518=Rate
+519=Mines:
+
+610=High score
+520=Your name :
+534=Show scores
+535=OK
+
+11=About
+503=Version
+502=This program is freeware.
+
+611=Colors
+521=Opened block
+522=Field
+523=Background
+524=Incorrect mark
+525=Speed graph
+526=Fatal mine
+527=Grid
+528=Text
+
+613=Options
+529=easy start, first click won't die
+530=flags are not clickable
+531=button down
+532=button up
+533=Open field when:
+
+600=Width
+601=Height
+602=Mines
+603=Rate
+604=Time
+605=Remains
+606=Clever Mines
+739=File %s not found
+799=Do you really want to delete all hiscores ?
+735=Cannot write to Windows registry
+
+755=Error in %s\nLine %d
+756=Error in %s\nMessage number %d is too big
+757=Error in %s\nDuplicated number %d
+753=File %s is too long
+754=Error reading file %s

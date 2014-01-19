@@ -1,0 +1,101 @@
+13=Miny.txt
+
+400=&Jeu
+100=&Nouveau jeu\tF2
+111=&Meilleurs scores...\tF3
+116=&Couleurs...\tF4
+118=O&ptions...
+101=Aggrandir\t+
+102=Réduire\t-
+110=Supprimer préférences
+117=Supprimer scores
+401=&Langue
+105=&Exit\tAlt+X
+
+402=&Taille
+114=&Tri Champs
+115=&Quad Champs
+450=&Débutant
+451=&Intermédiaire
+452=&Expert
+106=&Personnalisé...\tF5
+
+403=&Mines
+12=12%
+15=15%
+18=18%
+21=21%
+24=24%
+107=&Personnalisé...\tF6
+
+404=&Niveau
+201=Très facile
+202=Facile
+203=Moyen
+204=Difficile
+205=Très difficile
+
+405=&Aide
+120=&A lire
+121=&A propos...
+
+612=Personnalisé
+511=Largeur:
+510=Hauteur:
+512=Mines:
+1=OK
+2=Annuler
+
+607=Meilleurs scores - 
+608=Champs triangulaire
+609=Champs rectangulaire
+513=Nom
+514=Date
+515=Taille
+516=Niveau
+517=Temps
+518=Taux
+519=Mines:
+
+610=Meilleurs score
+520=Ton nom :
+534=Montrer scores
+535=OK
+
+11=A propos
+503=Version
+502=Ce programme est un freeware.
+
+611=Couleurs
+521=Block ouverts
+522=Champs
+523=Fond
+524=Marqueur incorrect
+525=graph. de rapidité
+526=Fatal mine
+527=Grille
+528=Texte
+
+613=Options
+529=départ facile, le premier click ne tue pas
+530=les drapeau ne sont pas clickable
+531=bouton bas
+532=bouton haut
+533=OUvrir le champs quand:
+
+600=Largeur
+601=Hauteur
+602=Mines
+603=Taux
+604=Temps
+605=Reste
+606=Clever Mines
+739=Fichier non trouvé
+799=Veus-tu vraiment supprimer les meilleurs scores?
+735=Ne peut pas écrire dans le registre windows
+
+755=Erreur dans %s\nLine %d
+756=Erreur dans %s\nMessage nombre %d est trop gros
+757=Erreur dans %s\nDuplicated nombre %d
+753=Le fichier est trop long
+754=Erreur de lecture du fichier %s

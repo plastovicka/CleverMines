@@ -1,0 +1,102 @@
+501=(C) 1998-2011  Petr Laštovièka
+502=Tento program je freeware.
+13=language\\cz.txt
+503=Verze
+11=O programu
+1=OK
+2=Storno
+
+;menu
+100=&Nová hra\tF2
+111=Nej&lepší èasy...\tF3
+116=&Barvy...\tF4
+118=&Možnosti...
+101=&Zvìtši\t+
+102=Zm&enši\t-
+110=Odstranit nastavení
+117=Odstranit nejlepší èasy
+105=&Konec\tAlt+X
+114=&Trojúhelníkové
+115=&Ètvercové
+450=&Zaèáteèník
+451=&Pokroèilý
+452=&Expert
+106=&Vlastní...\tF5
+107=&Vlastní...\tF6
+201=Nejlehèí
+202=Lehká
+203=Støední
+204=Tìžká
+205=Nejtìžší
+120=&Nápovìda
+121=&O programu...
+400=&Hra
+401=&Jazyk
+402=&Rozmìry
+403=&Množství min
+404=&Obtížnost
+405=&Nápovìda
+
+;okno vlastní
+510=Výška:
+511=Šíøka:
+512=Množství min:
+
+;okno nejlepší èasy
+513=Jméno
+514=Datum
+515=Rozmìry
+516=Obtížnost
+517=Èas
+518=Rychlost
+519=Množství:
+
+;okno nejlepší èas
+520=Tvoje jméno :
+534=Zapsat a zobrazit
+535=Zapsat
+
+;okno barvy
+521=Odkryté pole
+522=Neodkryté pole
+523=Pozadí
+524=Chybná znaèka
+525=Graf rychlosti
+526=Výbuch
+527=Møížka
+528=Text
+
+;okno možnosti
+529=u prvního klepnutí není mina
+530=pole oznaèené vlajkou nelze odkrýt
+531=stisknutí tlaèítka
+532=uvolnìní tlaèítka
+533=Odkrytí políèka pøi:
+
+;stavový øádek
+600=Šíøka
+601=Výška
+602=Poèet min
+603=Rychlost
+604=Èas
+605=Zbývá min
+
+;titulky oken
+606=Miny
+607=Nejlepší èasy - \0
+608=trojúhelníkové pole
+609=ètvercové pole
+610=Nejlepší èas
+611=Barvy
+612=Vlastní pole
+613=Možnosti
+
+735=Nelze uložit nastavení do registru
+739=Nenalezen soubor %s
+753=Soubor %s je moc dlouhý
+754=Chyba pøi ètení souboru %s
+755=Chyba v %s\nØádek %d nezaèíná èíslem
+756=Chyba v %s\nÈíslo %d je moc velké
+757=Chyba v %s\nVícenásobný výskyt %d
+799=Opravdu chcete smazat tabulky nejlepších èasù ?
+
