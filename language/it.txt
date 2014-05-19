@@ -1,0 +1,58 @@
+******************
+ Mine Intelligenti
+******************
+
+Il campo è suddiviso in piccole celle. Alcune di esse sono occupate dalle mine. Devi usare il tasto sinistro del mouse per cliccare su tutte le celle che sono senza la mina. I numeri indicati hanno il numero di mine che sono adiacenti. Si può scegliere (nel menu Formato) per un campo rettangolare o triangolare. Ogni cella ha 8 celle adiacenti. Ogni triangolo ha 12 celle adiacenti. Il campo triangolare è più difficile. È possibile utilizzare il pulsante destro del mouse per contrassegnare una cella in cui si sospetta una mina. Non è necessario contrassegnare tutte le mine per portare a termine un gioco. Dopo aver contrassegnato tutte le mine intorno al numero,puoi utilizzare il tasto sinistro o destro del mouse per cliccare sul numero per aprire rapidamente tutte le restanti celle intorno ad esso.
+Il Simbolo (?) a volte compare nell'angolo inferiore destro della finestra. Significa che devi indovinare e cliccare una cella dove può o non può esserci una mina. Se si clicca su una mina, il computer cercherà di spostare la mina su un'altra cella.. 
+Clicca sull'area sopra il campo per iniziare una nuova partita.
+
+Livello
+-------
+Si dovrebbe sempre cliccare solo sulle celle isolate, dove non ci sono mine. Se si clicca su una cella indeterminata, il computer può riordinare le mine secondo un determinato livello: 
+1. molto facile - non scoppia
+2. facile      - se la cella confina con qualche numero, allora non scoppia
+3. medio    - il computer non fa nulla, il risultato è casuale
+4. difficile      - scoppia
+5. molto difficile - scoppio più probabile
+La differenza tra il livello difficile e molto difficile è solo in situazioni in cui (?) viene visualizzato. Se si seleziona il livello molto difficile, devi cliccare solo sulle celle adiacenti a qualche numero.
+Questo è un gioco di abilità. La fortuna non esiste. Si può vincere ogni partita, anche se si seleziona il livello molto difficile. 
+
+Punteggi più alti
+-----------------
+Le tabelle dei punteggi alti esistono solo per la densità di mine del 12%, 15%, 18%, 21%, 24%. Puoi personalizzare la densità delle mine, ma il punteggio non sarà inserito in nessuna tabella. Le tabelle sono ordinate per (tasso+altezza*larghezza/6). Il tasso è calcolato come numero medio di clic per un secondo moltiplicato per 1000. Il grafico del tasso è visualizzato sopra il campo durante una partita.
+
+ I risultati migliori: 
+12% triangolare: 1250
+24% triangolare: 520 
+12% rettangolare: 1820
+24% rettangolare: 960
+
+
+Cosa c'è di nuovo
+-----------------
+2004-03-24: Traduzione Inglese
+2003-10-19: Corretto bug per la dimensione del carattere
+2003-02-05: opzioni
+2003-01-15: tabelle col punteggio più elevato, colore griglia
+2003-01-14: tutte le mine sono riportate alla fine del gioco
+2002-12-22: le mine sono rimosse intorno al primo clic
+2002-11-26: campo triangolare, colori personalizzabili
+2002-01-??: algoritmo più veloce
+2001-11-??: grafico velocità, punteggi più alti
+2001-08-??: versione per Windows
+1999-01-??: versione DOS
+
+
+Licenza
+-------
+Questo programma è distribuito sotto i termini "GNU General Public License". Si può scaricare dalla pagina web dell'autore o da http://opensource.org/licenses. Qui c'è solo un breve estratto della licenza:
+
+1) Il programma è gratuito. È possibile distribuirlo con qualsiasi mezzo. Possono esserci altri programmi (gratuiti o commerciali) sullo stesso supporto.
+2) Puoi modificare il Programma ed incorporare parti dello stesso nei tuoi programmi. In entrambi i casi, puoi distribuire le versioni modificate o derivate solo se si soddisfano tutte le condizioni:
+  a) Non devi rimuovere o alterare questa licenza.
+  b) Non devi eliminare il nome dell'autore originale.
+  c) Devi scrivere la documentazione e la data di ogni modificha.
+  d) Devi rendere disponibile il codice sorgente via FTP o HTTP.
+3) Il programma viene fornito senza alcuna garanzia. 
+
+http://petr.lastovicka.sweb.cz

@@ -304,7 +304,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 4,0,3,4
+ FILEVERSION 4,0,3,5
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -325,7 +325,7 @@ BEGIN
             VALUE "FileDescription", "Clever Mines\0"
             VALUE "FileVersion", "4.0\0"
             VALUE "InternalName", "\0"
-            VALUE "LegalCopyright", "© 2004-2013 Petr Laštovièka\0"
+            VALUE "LegalCopyright", "© 2004-2014 Petr Laštovièka\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "miny.exe\0"
             VALUE "PrivateBuild", "\0"
