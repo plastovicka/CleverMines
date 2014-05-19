@@ -1,0 +1,101 @@
+13=language\\it.txt
+
+400=&Gioco
+100=&Nuovo gioco\tF2
+111=&Punteggi più alti...\tF3
+116=&Colori...\tF4
+118=O&pzioni...
+101=Zoom &+\t+
+102=Zoom &-\t-
+110=Rimuovi impostazioni
+117=Rimuovi punteggi
+401=&Lingua
+105=&Esci\tAlt+X
+
+402=&Formato
+114=&Campo Triangolare
+115=&Campo Rettangolare
+450=&Principiante
+451=&Intermedio
+452=&Esperto
+106=&Personalizza...\tF5
+
+403=&Mine
+12=12%
+15=15%
+18=18%
+21=21%
+24=24%
+107=&Personalizza...\tF6
+
+404=&Livello
+201=Molto facile
+202=Facile
+203=Medio
+204=Difficile
+205=Molto difficile
+
+405=&Aiuto
+120=&Istruzioni
+121=&Info...
+
+612=Personalizza
+511=Larghezza:
+510=Altezza:
+512=Mine:
+1=OK
+2=Annulla
+
+607=Punteggi più alti - 
+608=campo triangolare
+609=campo rettangolare
+513=Nome
+514=Data
+515=Formato
+516=Livello
+517=Tempo
+518=Tasso
+519=Mine:
+
+610=Punteggi più alto
+520=Tuo nome :
+534=Mostra punteggi
+535=OK
+
+11=Info
+503=Versione
+502=Questo programma è gratuito.
+
+611=Colori
+521=Cella aperta
+522=Campo
+523=Sfondo
+524=Segno non corretto
+525=Grafico della velocità
+526=Mina fatale
+527=Griglia
+528=Testo
+
+613=Opzioni
+529=inizio facile, col primo clic non scoppia
+530=le celle marcate non sono cliccabili
+531=pulsante Giù
+532=pulsante Su
+533=Apri il campo con:
+
+600=Largh.
+601=Altezza
+602=Mine
+603=Tasso
+604=Tempo
+605=Rimanenze
+606=Mine Intelligenti
+739=File %s non trovato
+799=Vuoi davvero eliminare tutti i punteggi ?
+735=Impossibile scrivere nel Registro di sistema
+
+755=Error in %s\nRiga %d
+756=Error in %s\nNumero messaggio %d è troppo grande
+757=Error in %s\nNumero duplicato %d
+753=File %s è troppo lungo
+754=Errore lettura file %s
