@@ -1,0 +1,99 @@
+400=&Joc
+100=&nou Joc\tF2
+111=&High scores...\tF3
+116=&Colors...\tF4
+118=O&pcions...
+101=Zoom &in\t+
+102=Zoom &out\t-
+110=Esborrar configuració
+117=Esborrar records
+401=&Llenguatge
+105=&Sortir\tAlt+X
+
+402=&Tamany
+114=&Camp Tri 
+115=&Camp Quad 
+450=&Principiant
+451=&Intermig
+452=&Expert
+106=&Personalitzar...\tF5
+
+403=&Mines
+12=12%
+15=15%
+18=18%
+21=21%
+24=24%
+107=&Personalitzar...\tF6
+
+404=&Nivell
+201=Molt fàcil
+202=fàcil
+203=Mig
+204=difícil
+205=Molt difícil
+
+405=&Ajuda
+120=&Readme
+121=&Sobre...
+
+612=Personalitzar
+511=Amplada:
+510=Alçada:
+512=Mines:
+1=OK
+2=Cancel·lar
+
+607=Records - 
+608=Camp triangular 
+609=Camp rectangular 
+513=Nom
+514=Data
+515=Tamany
+516=Nivell
+517=Hora
+518=Rate
+519=Mines:
+
+610=Record
+520=El teu nom :
+534=Mostrar puntuacions
+535=OK
+
+11=Sobre
+503=Versió
+502=Aquest programa és freeware.
+
+611=Colors
+521=block obert
+522=Camp
+523=Fons
+524=marca incorrect
+525=grafic de velocitat
+526=mine fatal
+527=Graella
+528=Texte
+
+613=Options
+529=inici fàcil, el primer clic no morirà
+530=les banderes no son clickable
+531=botó amunt
+532=botó avall
+533=Open Camp when:
+
+600=Amplada
+601=Alçada
+602=Mines
+603=Canvi
+604=Hora
+605=Restes
+606=Mines Inteligent 
+739=El fitxer %s no s'ha trobat
+799=Realment vols esborrar tots el registres ?
+735=No es pot escriure al registre de Windows
+
+755=Error a la %s\nLinia %d
+756=Error al %s\nmissatge número %d és massa gran
+757=Error a %s\nnúmero duplicat %d
+753=El fitxer %s és massa gran
+754=Error llegint el fitxer %s
