@@ -70,6 +70,7 @@ triang=1,      //1=triangular field, 0=rectangular field
  fastOpen=1,     //block is opened just after mouse button down
  flagOpen=0,     //can open marked block
  x0, y0, xk, yk,    //field bounding rectangle
+ xCh=4,yCh=6,
  xmdlg, ymdlg, NminesReldlg; //values in "Custom" dialog
 
 bool
@@ -506,8 +507,8 @@ void paint(PSquare p)
 	}
 	DeleteObject(br);
 
-	xt= x-4;
-	yt= y-6;
+	xt= x-xCh;
+	yt= y-yCh;
 	if(isOpened){
 		if(p->Nmin && p->opened){
 			//print number
@@ -516,8 +517,7 @@ void paint(PSquare p)
 			if(p->Nmin>9){
 				ch[0]= '1';
 				ch[1]= (char)(p->Nmin + '0'-10);
-				TextOut(dc, xt-4, yt, ch, 2);
-				TextOut(dc, xt-4, yt, ch, 2);
+				TextOut(dc, xt-xCh, yt, ch, 2);
 			}
 			else{
 				ch[0]= (char)(p->Nmin + '0');
@@ -536,7 +536,7 @@ void paint(PSquare p)
 				//flag
 				charOut(xt+2, yt-5, '>', 0x50c0);
 				oldPen=SelectObject(dc, GetStockObject(BLACK_PEN));
-				line(x-2, y-8, x-2, y+9);
+				line(x-2, y-9, x-2, y+9);
 				SelectObject(dc, oldPen);
 			}
 		}
@@ -645,10 +645,11 @@ void endGame()
 void resize()
 {
 	RECT rc, rcs;
-	int w, h, sx, sy, wc, hc, wb, hb;
+	int w, h, sx, sy, wc, hc, wb, hb, border;
 
-	wb= 20;
-	hb= 12 + 2*HIWORD(GetDialogBaseUnits()) + GetSystemMetrics(SM_CYMENU) + GetSystemMetrics(SM_CYCAPTION);
+	border = 2*GetSystemMetrics(92 /*SM_CXPADDEDBORDER*/);
+	wb= 20 + border;
+	hb= 14 + 2*HIWORD(GetDialogBaseUnits()) + GetSystemMetrics(SM_CYMENU) + GetSystemMetrics(SM_CYCAPTION) + border;
 	amin(gridy, triang ? minGridY : 18);
 	SystemParametersInfo(SPI_GETWORKAREA, 0, &rcs, 0);
 	sx=rcs.right-rcs.left;
@@ -714,7 +715,11 @@ void repaint()
 	drawGraph(clgraf);
 
 	SetTextColor(dc, colors[clText]);
-	y=Height-HIWORD(GetDialogBaseUnits());
+
+	LONG units=GetDialogBaseUnits();
+	xCh=LOWORD(units)/2;
+	yCh=HIWORD(units)/2 - 1;
+	y=Height-HIWORD(units);
 	if(ps.rcPaint.bottom > yk){
 		//status bar
 		numOut(8, y, lng(600, "Width"), width);
@@ -1149,9 +1154,10 @@ BOOL CALLBACK ScoreProc(HWND hWnd, UINT msg, WPARAM wP, LPARAM)
 			TScore *s= score[tabInd];
 			BeginPaint(hWnd, &ps);
 			SetBkMode(ps.hdc, TRANSPARENT);
+			int dpi=GetDeviceCaps(ps.hdc, LOGPIXELSX);
 			for(int i=0; i<Dscore; i++, s++){
 				if(!s->playtime) continue;
-				int y=24*i+35;
+				int y=(24*i+35)*dpi/96;
 				SetTextColor(ps.hdc, lastScore[tabInd]==i ? colors[cllastScore] : 0);
 				TextOut(ps.hdc, 10, y, s->name, (int)strlen(s->name)); //name
 				SetTextAlign(ps.hdc, TA_RIGHT);
@@ -1449,6 +1455,12 @@ int pascal WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR, int cmdShow)
 	int i;
 
 	inst=hInstance;
+
+	//DPIAware
+	typedef BOOL(WINAPI *TGetProcAddress)();
+	TGetProcAddress getProcAddress = (TGetProcAddress) GetProcAddress(GetModuleHandle("user32"), "SetProcessDPIAware");
+	if(getProcAddress) getProcAddress();
+
 	//read settings from registry
 	readini();
 	initLang();
