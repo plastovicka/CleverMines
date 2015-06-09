@@ -193,7 +193,7 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About"
 FONT 9, "MS Shell Dlg"
 BEGIN
-    CTEXT           "(C) 2001-2011  Petr Lastovicka",501,0,54,123,10
+    CTEXT           "(C) 2001-2015  Petr Lastovicka",501,0,54,123,10
     CTEXT           "Version",503,38,28,28,9
     CTEXT           "Clever Mines",-1,5,4,112,12,SS_CENTERIMAGE | SS_SUNKEN
     ICON            1,-1,13,24,20,20

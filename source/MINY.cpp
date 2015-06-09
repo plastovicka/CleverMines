@@ -1,5 +1,5 @@
 /*
- (C) 1999-2011  Petr Lastovicka
+ (C) 1999-2015  Petr Lastovicka
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License.
@@ -226,10 +226,10 @@ bool uncheckMenu(unsigned item)
 int minesTab[]={12, 15, 18, 21, 24, 12, 15, 18, 21, 24};
 int triangTab[]={1, 1, 1, 1, 1, 0, 0, 0, 0, 0};
 
-int getScoreTab(int triang, int NminesRel)
+int getScoreTab(int _triang, int _NminesRel)
 {
 	for(int i=0; i<sizeA(minesTab); i++){
-		if(minesTab[i]==NminesRel && triangTab[i]==triang) return i;
+		if(minesTab[i]==_NminesRel && triangTab[i]==_triang) return i;
 	}
 	return -1;
 }
@@ -360,13 +360,13 @@ void addScore(TScore &s, int tabInd, bool askName)
 	int i, dlg;
 
 	if(tabInd<0) return;
-	TScore *score= ::score[tabInd];
+	TScore *scoreTable= ::score[tabInd];
 	//sort
 	for(i=0; i<Dscore; i++){
-		if(ordScore(s) >= ordScore(score[i])) break;
+		if(ordScore(s) >= ordScore(scoreTable[i])) break;
 	}
 	if(i<Dscore){
-		if(!memcmp(&s, &score[i], sizeof(TScore))) return;
+		if(!memcmp(&s, &scoreTable[i], sizeof(TScore))) return;
 		//ask for name
 		dlg=103;
 		if(askName){
@@ -377,8 +377,8 @@ void addScore(TScore &s, int tabInd, bool askName)
 		if(dlg!=IDCANCEL){
 			//insert new line to table
 			lastScore[tabInd]=i;
-			for(int j=Dscore-1; j>i; j--)  score[j]=score[j-1];
-			score[i]=s;
+			for(int j=Dscore-1; j>i; j--)  scoreTable[j]=scoreTable[j-1];
+			scoreTable[i]=s;
 			//show table
 			if(dlg!=535)
 				DialogBoxParam(inst, "HISCORE", hWin, (DLGPROC)ScoreProc, 0);
@@ -1154,7 +1154,7 @@ BOOL CALLBACK ScoreProc(HWND hWnd, UINT msg, WPARAM wP, LPARAM)
 			TScore *s= score[tabInd];
 			BeginPaint(hWnd, &ps);
 			SetBkMode(ps.hdc, TRANSPARENT);
-			int dpi=GetDeviceCaps(ps.hdc, LOGPIXELSX);
+			int dpi=GetDeviceCaps(ps.hdc, LOGPIXELSY);
 			for(int i=0; i<Dscore; i++, s++){
 				if(!s->playtime) continue;
 				int y=(24*i+35)*dpi/96;
