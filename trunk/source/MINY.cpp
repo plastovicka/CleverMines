@@ -1,5 +1,5 @@
 /*
- (C) 1999-2015  Petr Lastovicka
+ (C) 1999-2016  Petr Lastovicka
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License.
@@ -16,6 +16,7 @@
 #include "lang.h"
 
 #pragma comment(lib,"comctl32.lib")
+#pragma comment(lib, "version.lib")
 
 //---------------------------------------------------------------------------
 static int dxy[]={13, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 20, 0, 21, 0, 0, 23,
@@ -295,17 +296,32 @@ void writeScore()
 	}
 }
 //---------------------------------------------------------------------------
+DWORD getVer()
+{
+	HRSRC r;
+	HGLOBAL h;
+	void *s;
+	VS_FIXEDFILEINFO *v;
+	UINT i;
+
+	r=FindResource(0, (TCHAR*)VS_VERSION_INFO, RT_VERSION);
+	h=LoadResource(0, r);
+	s=LockResource(h);
+	if(!s || !VerQueryValue(s, "\\", (void**)&v, &i)) return 0;
+	return v->dwFileVersionMS;
+}
+
 BOOL CALLBACK AboutProc(HWND hWnd, UINT msg, WPARAM wP, LPARAM)
 {
-	char buf[64];
-	// DWORD d;
+	char buf[48];
+	DWORD d;
 
 	switch(msg){
 		case WM_INITDIALOG:
 			setDlgTexts(hWnd, 11);
-			//d=getVer();
-			//sprintf(buf,"%d.%d",HIWORD(d),LOWORD(d));
-			//SetDlgItemText(hWnd,101,buf);
+			d=getVer();
+			sprintf(buf, "%d.%d", HIWORD(d), LOWORD(d));
+			SetDlgItemText(hWnd, 101, buf);
 			return TRUE;
 
 		case WM_COMMAND:
@@ -1113,7 +1129,7 @@ void eraseBkgnd()
 BOOL CALLBACK ScoreProc(HWND hWnd, UINT msg, WPARAM wP, LPARAM)
 {
 	static int tabInd;
-	const int colX[]={104, 127, 162, 192, 231, 262};
+	const int colX[]={104, 127, 164, 192, 231, 262};
 	int cmd;
 
 	switch(msg){
@@ -1162,6 +1178,7 @@ BOOL CALLBACK ScoreProc(HWND hWnd, UINT msg, WPARAM wP, LPARAM)
 				TextOut(ps.hdc, 10, y, s->name, (int)strlen(s->name)); //name
 				SetTextAlign(ps.hdc, TA_RIGHT);
 				for(int j=0; j<6; j++){
+					rc.right=colX[j];
 					switch(j){
 						case 0: //date
 							SYSTEMTIME t;
@@ -1177,6 +1194,7 @@ BOOL CALLBACK ScoreProc(HWND hWnd, UINT msg, WPARAM wP, LPARAM)
 							GetTimeFormat(LOCALE_USER_DEFAULT,
 								TIME_FORCE24HOURFORMAT|TIME_NOSECONDS,
 								&t, 0, buf, sizeof(buf));
+							if(strlen(buf)>6) rc.right+=10;
 							break;
 						case 2: //field size
 							sprintf(buf, "%dx%d", s->width, s->height);
@@ -1191,7 +1209,6 @@ BOOL CALLBACK ScoreProc(HWND hWnd, UINT msg, WPARAM wP, LPARAM)
 							sprintf(buf, "%d", s->speed);
 							break;
 					}
-					rc.right=colX[j];
 					rc.left=rc.top=rc.bottom=0;
 					MapDialogRect(hWnd, &rc);
 					TextOut(ps.hdc, rc.right, y, buf, (int)strlen(buf));
