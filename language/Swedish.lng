@@ -2,20 +2,20 @@
 
 400=Spel
 100=Nytt spel\tF2
-111=Po√§ngrekord...\tF3
-116=F√§rger...\tF4
+111=Po‰ngrekord...\tF3
+116=F‰rger...\tF4
 118=Alternativ...
 101=Zoom in\t+
 102=Zoom ut\t-
-110=√Öterst√§ll inst√§llningar
-117=√Öterst√§ll po√§ng
-401=Spr√•k
+110=≈terst‰ll inst‰llningar
+117=≈terst‰ll po‰ng
+401=SprÂk
 105=Avsluta\tAlt+X
 
 402=Storlek
-114=Tri F√§lt
-115=Quad F√§lt
-450=Nyb√∂rjare
+114=Tri F‰lt
+115=Quad F‰lt
+450=Nybˆrjare
 451=Mellanliggande
 452=Expert
 106=Egen...\tF5
@@ -28,74 +28,74 @@
 24=24%
 107=Egen...\tF6
 
-404=Niv√•
-201=Mycket l√§tt
-202=L√§tt
+404=NivÂ
+201=Mycket l‰tt
+202=L‰tt
 203=Mellan
-204=H√•rt
-205=Mycket h√•rt
+204=HÂrt
+205=Mycket hÂrt
 
-405=Hj√§lp
-120=L√§s mig
+405=Hj‰lp
+120=L‰s mig
 121=Om...
 
 612=Egen
 511=Bredd:
-510=H√∂jd:
+510=Hˆjd:
 512=Minor:
 1=OK
 2=Avbryt
 
-607=Po√§ngrekord - 
-608=triangular f√§lt
-609=rectangular f√§lt
+607=Po‰ngrekord - 
+608=triangular f‰lt
+609=rectangular f‰lt
 513=Namn
 514=Datum
 515=Storlek
-516=Niv√•
+516=NivÂ
 517=Tid
-518=Betygs√§tt
+518=Betygs‰tt
 519=Minor:
 
-610=Po√§ngrekord
+610=Po‰ngrekord
 520=Ditt namn :
-534=Visa po√§ng
+534=Visa po‰ng
 535=OK
 
 11=Om
 503=Version
-502=Detta program √§r freeware/gratis.
+502=Detta program ‰r freeware/gratis.
 
-611=F√§rger
-521=√ñppnat block
-522=F√§lt
+611=F‰rger
+521=÷ppnat block
+522=F‰lt
 523=Bakgrund
-524=Felaktigt m√§rke
+524=Felaktigt m‰rke
 525=Hastighetsgraf
-526=D√∂dlig f√§lt
+526=Dˆdlig f‰lt
 527=Grid
 528=Text
 
 613=Alternativ
-529=enkel start, vid f√∂rsta klick kommer du inte d√∂
-530=flaggor √§r inte klickbara
+529=enkel start, vid fˆrsta klick kommer du inte dˆ
+530=flaggor ‰r inte klickbara
 531=knappen ner
 532=knappen upp
-533=√ñppet f√§lt n√§r:
+533=÷ppet f‰lt n‰r:
 
 600=Bredd
-601=H√∂jd
+601=Hˆjd
 602=Minor
-603=Betygs√§tt
+603=Betygs‰tt
 604=Tid
-605=Kvarst√•ende
+605=KvarstÂende
 606=Smarta minor
 739=Fil %s hittas ej
-799=Vill du verkligen radera alla po√§ngrekord ?
-735=Det g√•r inte att skriva till Windows-registret
+799=Vill du verkligen radera alla po‰ngrekord ?
+735=Det gÂr inte att skriva till Windows-registret
 
 755=Fel i %s\nLinje %d
-756=Fel i %s\nMeddelandenummer %d √§r f√∂r stor
+756=Fel i %s\nMeddelandenummer %d ‰r fˆr stor
 757=Fel i %s\nDupliserat nummer %d
-753=Filnamn %s √§r f√∂r l√•ngt
-754=Fel i l√§sfil %s
+753=Filnamn %s ‰r fˆr lÂngt
+754=Fel i l‰sfil %s
