@@ -298,6 +298,7 @@ void initLang()
 			case LANG_FRENCH: s="French"; break;
 			case LANG_ITALIAN: s="Italiano"; break;
 			case LANG_POLISH: s="Polski"; break;
+			case LANG_SWEDISH: s="Swedish"; break;
 			default: s="English"; break;
 		}
 		strcpy(lang, s);

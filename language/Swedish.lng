@@ -1,0 +1,101 @@
+13=Miny.txt
+
+400=Spel
+100=Nytt spel\tF2
+111=Poängrekord...\tF3
+116=Färger...\tF4
+118=Alternativ...
+101=Zoom in\t+
+102=Zoom ut\t-
+110=Återställ inställningar
+117=Återställ poäng
+401=Språk
+105=Avsluta\tAlt+X
+
+402=Storlek
+114=Tri Fält
+115=Quad Fält
+450=Nybörjare
+451=Mellanliggande
+452=Expert
+106=Egen...\tF5
+
+403=Minor
+12=12%
+15=15%
+18=18%
+21=21%
+24=24%
+107=Egen...\tF6
+
+404=Nivå
+201=Mycket lätt
+202=Lätt
+203=Mellan
+204=Hårt
+205=Mycket hårt
+
+405=Hjälp
+120=Läs mig
+121=Om...
+
+612=Egen
+511=Bredd:
+510=Höjd:
+512=Minor:
+1=OK
+2=Avbryt
+
+607=Poängrekord - 
+608=triangular fält
+609=rectangular fält
+513=Namn
+514=Datum
+515=Storlek
+516=Nivå
+517=Tid
+518=Betygsätt
+519=Minor:
+
+610=Poängrekord
+520=Ditt namn :
+534=Visa poäng
+535=OK
+
+11=Om
+503=Version
+502=Detta program är freeware/gratis.
+
+611=Färger
+521=Öppnat block
+522=Fält
+523=Bakgrund
+524=Felaktigt märke
+525=Hastighetsgraf
+526=Dödlig fält
+527=Grid
+528=Text
+
+613=Alternativ
+529=enkel start, vid första klick kommer du inte dö
+530=flaggor är inte klickbara
+531=knappen ner
+532=knappen upp
+533=Öppet fält när:
+
+600=Bredd
+601=Höjd
+602=Minor
+603=Betygsätt
+604=Tid
+605=Kvarstående
+606=Smarta minor
+739=Fil %s hittas ej
+799=Vill du verkligen radera alla poängrekord ?
+735=Det går inte att skriva till Windows-registret
+
+755=Fel i %s\nLinje %d
+756=Fel i %s\nMeddelandenummer %d är för stor
+757=Fel i %s\nDupliserat nummer %d
+753=Filnamn %s är för långt
+754=Fel i läsfil %s
