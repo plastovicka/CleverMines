@@ -8,5 +8,5 @@ You should not guess because the computer can move mines in the background. Ther
 
 You can **download** released binaries (EXE file) for Windows from [sourceforge.net](https://sourceforge.net/projects/miny/).
 
-![Clever Mines screenshot](http://petr.lastovicka.sweb.cz/img/mines.png)
-![Clever Mines screenshot](http://petr.lastovicka.sweb.cz/img/mines-quad.png)
+![Clever Mines screenshot](https://plastovicka.github.io/img/mines.png)
+![Clever Mines screenshot](https://plastovicka.github.io/img/mines-quad.png)
