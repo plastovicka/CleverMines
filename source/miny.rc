@@ -200,7 +200,7 @@ BEGIN
     PUSHBUTTON      "OK",IDOK,42,98,39,14
     ICON            1,-1,89,24,20,20
     LTEXT           "",101,68,28,12,8
-    PUSHBUTTON      "http://petr.lastovicka.sweb.cz",123,7,73,109,17
+    PUSHBUTTON      "https://plastovicka.github.io",123,7,73,109,17
 END
 
 COLORS DIALOG DISCARDABLE  5, 24, 194, 147
@@ -304,7 +304,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 4,2,0,0
+ FILEVERSION 4,2,0,1
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -323,7 +323,7 @@ BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", " \0"
             VALUE "FileDescription", "Clever Mines\0"
-            VALUE "FileVersion", "4, 2, 0, 0\0"
+            VALUE "FileVersion", "4, 2, 0, 1\0"
             VALUE "InternalName", "\0"
             VALUE "LegalCopyright", "© 2004-2022 Petr Laštovièka\0"
             VALUE "LegalTrademarks", "\0"

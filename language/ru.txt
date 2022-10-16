@@ -76,7 +76,7 @@
 --------
 Эта программа распространяется на условиях "GNU General Public License".
 Вы можете скачать её с веб-страницы автора
-http://petr.lastovicka.sweb.cz
+https://plastovicka.github.io
 или со страницы
 http://opensource.org/licenses
 
@@ -111,4 +111,4 @@ if you also meet all of these conditions:
   d) You will make the derived source code available via FTP or HTTP.
 3) The Program is provided without warranty. 
 
-http://petr.lastovicka.sweb.cz
+https://plastovicka.github.io

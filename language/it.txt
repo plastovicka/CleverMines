@@ -55,4 +55,4 @@ Questo programma è distribuito sotto i termini "GNU General Public License". Si 
   d) Devi rendere disponibile il codice sorgente via FTP o HTTP.
 3) Il programma viene fornito senza alcuna garanzia. 
 
-http://petr.lastovicka.sweb.cz
+https://plastovicka.github.io

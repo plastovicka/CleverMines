@@ -329,7 +329,7 @@ BOOL CALLBACK AboutProc(HWND hWnd, UINT msg, WPARAM wP, LPARAM)
 			switch(cmd){
 				case 123:
 					GetDlgItemTextA(hWnd, cmd, buf, sizeA(buf)-13);
-					if(!strcmp(lang, "English")) strcat(buf, "/indexEN.html");
+					if(!strcmp(lang, "Èesky")) strcat(buf, "/indexCS.html");
 					ShellExecuteA(0, 0, buf, 0, 0, SW_SHOWNORMAL);
 				case IDOK:
 				case IDCANCEL:
