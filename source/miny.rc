@@ -193,7 +193,7 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About"
 FONT 9, "MS Shell Dlg"
 BEGIN
-    CTEXT           "(C) 2001-2022  Petr Lastovicka",501,0,54,123,10
+    CTEXT           "(C) 2001-2023  Petr Lastovicka",501,0,54,123,10
     CTEXT           "Version",503,38,28,28,9
     CTEXT           "Clever Mines",-1,5,4,112,12,SS_CENTERIMAGE | SS_SUNKEN
     ICON            1,-1,13,24,20,20
@@ -304,7 +304,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 4,2,0,1
+ FILEVERSION 4,2,0,3
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -323,9 +323,9 @@ BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", " \0"
             VALUE "FileDescription", "Clever Mines\0"
-            VALUE "FileVersion", "4, 2, 0, 1\0"
+            VALUE "FileVersion", "4, 2, 0, 3\0"
             VALUE "InternalName", "\0"
-            VALUE "LegalCopyright", "© 2004-2022 Petr Laštovièka\0"
+            VALUE "LegalCopyright", "© 2004-2023 Petr Laštovièka\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "miny.exe\0"
             VALUE "PrivateBuild", "\0"

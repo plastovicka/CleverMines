@@ -1,5 +1,5 @@
 /*
- (C) 1999-2016  Petr Lastovicka
+ (C) Petr Lastovicka
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License.
@@ -54,9 +54,10 @@ triang=1,      //1=triangular field, 0=rectangular field
  width=23,
  height=15,     //field size (without borders)
  Width, Height,  //window size
+ mainLeft=100, mainTop=100, //window position
  NminesRel=18,  //mines density
  level=5,       //difficulty
- gridx, gridy=27,//block size (in pixels)
+ gridx, gridy=40,//block size (in pixels)
  Nmines,    //total number of mines
  remainm,   //remaining (not marked) mines, can be negative!
  remaino,   //remaining open blocks
@@ -146,6 +147,7 @@ const struct Treg { char *s; int *i; } regVal[]={
 	{"obtiznost", &level}, {"velikost", &gridy},
 	{"triang", &triang}, {"easyStart", &isEasyStart},
 	{"fastOpen", &fastOpen}, {"flagOpen", &flagOpen},
+	{"top", &mainTop}, {"left", &mainLeft},
 };
 
 //---------------------------------------------------------------------------
@@ -1165,7 +1167,7 @@ BOOL CALLBACK ScoreProc(HWND hWnd, UINT msg, WPARAM wP, LPARAM)
 			strcpy(buf, lng(607, "High scores - "));
 			strcat(buf, triang ? lng(608, "triangular field") :
 				lng(609, "rectangular field"));
-			sprintf(strchr(buf, 0), " - %d%", minesTab[tabInd]);
+			sprintf(strchr(buf, 0), " - %d%%", minesTab[tabInd]);
 			SetWindowText(hWnd, buf);
 			TScore *s= score[tabInd];
 			BeginPaint(hWnd, &ps);
@@ -1439,6 +1441,14 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 			}
 			break;
 
+		case WM_MOVE:
+			if(!IsIconic(hWin) && !IsZoomed(hWin)) {
+				GetWindowRect(hWin, &rc);
+				mainTop= rc.top;
+				mainLeft= rc.left;
+			}
+			break;
+
 		case WM_ERASEBKGND:
 			eraseBkgnd();
 			return 1;
@@ -1500,7 +1510,7 @@ int pascal WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR, int cmdShow)
 
 	hWin = CreateWindowEx(0, "MinaWCls", "",
 		WS_OVERLAPPED | WS_SYSMENU | WS_MINIMIZEBOX,
-		100, 100, 50, 50,
+		mainLeft, mainTop, 50, 50,
 		0, 0, hInstance, NULL
 	);
 	if(!hWin) return 2;

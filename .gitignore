@@ -1,0 +1,12 @@
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.aps
+*.ncb
+*.opt
+*.user
+*.tlog
+/.vs
+/Debug
+/Release

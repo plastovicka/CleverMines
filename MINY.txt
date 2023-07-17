@@ -30,6 +30,8 @@ High score tables exist only for 12%, 15%, 18%, 21%, 24% mines density. You can 
 
 What's new
 ----------
+2023-07-17: window position is saved
+2023-05-30: can be installed from the Microsoft Store
 2004-03-24: English translation
 2003-10-19: fixed bug with font size
 2003-02-05: options
