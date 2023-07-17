@@ -1,7 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.33711.374
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "miny", "miny.vcxproj", "{E18FF095-92B2-AE29-70C4-FDD442D7E793}"
+EndProject
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "WapProjTemplate1", "WapProjTemplate1\WapProjTemplate1.wapproj", "{8F2A5EF5-7DE7-4FF0-A3A8-B4D60E158D5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +17,17 @@ Global
 		{E18FF095-92B2-AE29-70C4-FDD442D7E793}.Debug|Win32.Build.0 = Debug|Win32
 		{E18FF095-92B2-AE29-70C4-FDD442D7E793}.Release|Win32.ActiveCfg = Release|Win32
 		{E18FF095-92B2-AE29-70C4-FDD442D7E793}.Release|Win32.Build.0 = Release|Win32
+		{8F2A5EF5-7DE7-4FF0-A3A8-B4D60E158D5A}.Debug|Win32.ActiveCfg = Debug|x86
+		{8F2A5EF5-7DE7-4FF0-A3A8-B4D60E158D5A}.Debug|Win32.Build.0 = Debug|x86
+		{8F2A5EF5-7DE7-4FF0-A3A8-B4D60E158D5A}.Debug|Win32.Deploy.0 = Debug|x86
+		{8F2A5EF5-7DE7-4FF0-A3A8-B4D60E158D5A}.Release|Win32.ActiveCfg = Release|x86
+		{8F2A5EF5-7DE7-4FF0-A3A8-B4D60E158D5A}.Release|Win32.Build.0 = Release|x86
+		{8F2A5EF5-7DE7-4FF0-A3A8-B4D60E158D5A}.Release|Win32.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D76FDDED-1A20-4D67-9F76-F7472F0579B3}
 	EndGlobalSection
 EndGlobal
