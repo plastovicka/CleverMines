@@ -79,7 +79,7 @@ triang=1,      //1=triangular field, 0=rectangular field
  xmdlg, ymdlg, NminesReldlg; //values in "Custom" dialog
 
 bool
-vizmin, vizv, debug,//show mines and definite blocks (cheat)
+vizmin, vizv, debug, cheat,//show mines and definite blocks (cheat)
  delreg=false,  //user deleted settings
  isMouseDown=false,
  looser, gameOver;//game over
@@ -851,6 +851,7 @@ void newGame()
 	canOpen=0;
 	divergence=0;
 	wrong.nxt= wrong.prv= &wrong;
+	if(!vizmin && !vizv && !debug) cheat=false;
 
 	//reset graph
 	memset(grafTab, 0, sizeof(grafTab));
@@ -1305,14 +1306,17 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 					resize();
 					break;
 				case 103: //show mines (cheat)
+					cheat=true;
 					vizmin= !vizmin;
 					InvalidateRect(hWnd, NULL, FALSE);
 					break;
 				case 104: //highlight definite blocks (cheat)
+					cheat=true;
 					vizv= !vizv;
 					InvalidateRect(hWnd, NULL, FALSE);
 					break;
 				case 108:
+					cheat=true;
 					debug= !debug;
 					if(debug) vizmin=true, vizv=true;
 					InvalidateRect(hWnd, NULL, FALSE);

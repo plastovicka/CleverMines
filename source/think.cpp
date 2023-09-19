@@ -552,7 +552,7 @@ bool open(PSquare p)
 		if(!remaino){
 			endGame();
 			if(remainm!=Nmines) remainm=0;
-			addScore();
+			if(!cheat) addScore();
 		}
 	}
 	return true;

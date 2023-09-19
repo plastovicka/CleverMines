@@ -82,7 +82,7 @@ inline void randomize() { srand((unsigned)time(NULL)); }
 #endif
 //---------------------------------------------------------------------------
 extern PSquare board, boardk, bum;
-extern bool vizmin, vizv, debug, gameOver, looser;
+extern bool vizmin, vizv, debug, cheat, gameOver, looser;
 extern int width, height, Nmines, NminesRel, level, canOpen, isEasyStart, inMin, inFree, remaino, remainm, divergence;
 extern Plst recycle;
 extern Plst2 recycle2;
