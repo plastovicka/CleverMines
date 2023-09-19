@@ -759,14 +759,14 @@ void repaint()
 	y=Height-HIWORD(units);
 	if(ps.rcPaint.bottom > yk){
 		//status bar
-		numOut(8, y, lng(600, "Width"), width);
-		numOut(90, y, lng(601, "Height"), height);
-		numOut(180, y, lng(602, "Mines"), Nmines);
+		numOut(5, y, lng(600, "Width"), width);
+		numOut(110, y, lng(601, "Height"), height);
+		numOut(220, y, lng(602, "Mines"), Nmines);
 		if(canOpen==0 && playtime>=0 && !gameOver){
 			TextOut(dc, Width - 50, y, "(?)", 3);
 		}
 		if(gameOver && playtime>4){
-			numOut(300, y, lng(603, "Rate"), rate);
+			numOut(329, y, lng(603, "Rate"), rate);
 		}
 	}
 	if(ps.rcPaint.top < y0){
