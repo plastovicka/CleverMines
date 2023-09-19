@@ -2,7 +2,7 @@
  Clever Mines
 **************
 
-The field is divided into small blocks. Some of them are occupied by mines. You have to use left mouse button to click all blocks which are without a mine. Numbers indicate the count of mines which are in the adjacent blocks. You can choose (in Size menu) a quadratic field or a triangular field. Every square has 8 adjacent blocks. Every triangle has 12 adjacent blocks. Triangular field is more difficult.  You can use right mouse button to mark a block where you suspect a mine. It is not required to mark all mines in order to finish a game. After you have marked all mines around some number, then you can use left or right mouse button to click the number in order to quickly open all remaining blockes around the number.
+The field is divided into small blocks. Some of them are occupied by mines. You have to use left mouse button to click all blocks which are without a mine. Numbers indicate the count of mines which are in the adjacent blocks. You can choose (in Size menu) a quadratic field or a triangular field. Every square has 8 adjacent blocks. Every triangle has 12 adjacent blocks. Triangular field is more difficult.  You can use right mouse button to mark a block where you suspect a mine. It is not required to mark all mines in order to finish a game. After you have marked all mines around some number, then you can use left, right or middle mouse buttons to click the number in order to quickly open all remaining blocks around the number.
 Symbol (?) sometimes appears at the bottom right corner of a window. It means that you must guess and click a block where may or may not be a mine. If you then click a mine, the computer will try to move that mine to another block. 
 Click to the area above the field to start a new game.
 
@@ -30,6 +30,7 @@ High score tables exist only for 12%, 15%, 18%, 21%, 24% mines density. You can 
 
 What's new
 ----------
+2023-09-19: the middle mouse button on a number
 2023-07-17: window position is saved
 2023-05-30: can be installed from the Microsoft Store
 2004-03-24: English translation

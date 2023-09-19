@@ -1,7 +1,7 @@
 Nápovìda k programu Miny
 ------------------------
 Cílem hry je odkrıt všechna políèka, na kterıch není mina. Políèka se odkrıvají pomocí levého tlaèítka myši. Po odkrytí se zobrazí èíslo, které znamená poèet min na sousedních políèkách. 
-Pravım tlaèítkem oznaèujete políèka, na kterıch jsou miny. Jestlie jsou kolem èísla u všechny miny oznaèeny, pak lze rychle odkrıt zbylá okolní políèka tak, e klepnete na èíslo levım nebo pravım tlaèítkem. 
+Pravım tlaèítkem oznaèujete políèka, na kterıch jsou miny. Jestlie jsou kolem èísla u všechny miny oznaèeny, pak lze rychle odkrıt zbylá okolní políèka tak, e klepnete na èíslo levım, pravım nebo prostøedním tlaèítkem. 
 Pokud je v pravém dolním rohu zobrazen otazník, pak to znamená, e o ádném políèku nelze s jistotou øíci, e na nìm není mina. V takové situaci se vám poèítaè snaí pomoct a jestlie klepnete na minu, pak se ji pokusí pøemístit nìkam jinam. 
 Novou hru zaènete klepnutím do oblasti nad hrací plochou nebo stisknutím F2.
 
@@ -54,6 +54,7 @@ Co je nového
  24.3.2004 - anglickı pøeklad
  30.5.2023 - lze to nainstalovat z Microsoft Store
  17.7.2023 - ukládá se pozice okna
+ 19.9.2023 - prostøední tlaèítko myši na èísle
 
 Licence
 -------

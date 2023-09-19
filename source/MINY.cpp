@@ -1412,6 +1412,7 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 
 		case WM_LBUTTONDOWN:
 		case WM_RBUTTONDOWN:
+		case WM_MBUTTONDOWN:
 			if(HIWORD(lP)<y0 && gameOver) newGame();
 			p=hit(lP);
 			if(p && !gameOver){
@@ -1420,7 +1421,7 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 					time0= GetTickCount();
 					playtime=0;
 					SetTimer(hWin, 10, 1000, NULL);
-					mesg=WM_LBUTTONDOWN;
+					if(fastOpen) mesg=WM_LBUTTONDOWN;
 					easyStart(p);
 				}
 				if(mesg==WM_LBUTTONDOWN){
@@ -1440,6 +1441,11 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT mesg, WPARAM wP, LPARAM lP)
 					else{
 						mark(p);
 						if(p->flag) clicks++; else clicks--;
+					}
+				}
+				if(mesg==WM_MBUTTONDOWN) {
+					if(p->opened) {
+						if(openAround(p)) clicks++;
 					}
 				}
 			}
