@@ -36,10 +36,13 @@ COLORREF colors[] ={
 	0x100000, 0x70746d
 };
 static COLORREF custom[16];
-COLORREF clLight, clDark;
+static int penIndex[]={ clGrid,clBlast,clOpened, -1 };
+static int brushIndex[]={ clField,clvi,clBlast,clOpened, -1 };
+const int Ncl=sizeA(colors);
+HPEN pens[Ncl], penLight, penDark;
+HBRUSH brushes[Ncl];
 
 const int remainW=140, timeW=130;
-const int Ncl=sizeA(colors);
 #define Dtab 10
 
 HDC dc;
@@ -426,12 +429,38 @@ void addScore()
 	addScore(s, getScoreTab(triang, NminesRel), true);
 }
 //---------------------------------------------------------------------------
+void initPenBrush()
+{
+	for(int *p=penIndex; *p>=0; p++)
+		pens[*p]=CreatePen(PS_SOLID, 1, colors[*p]);
+	for(int *p=brushIndex; *p>=0; p++)
+		brushes[*p]=CreateSolidBrush(colors[*p]);
+	
+	COLORREF c=colors[clField];
+	const double K1=0.4;
+	penDark=CreatePen(PS_SOLID, 1, RGB(int(GetRValue(c)*K1), int(GetRValue(c)*K1), int(GetBValue(c)*K1)));
+	const double K2=1.3;
+	penLight=CreatePen(PS_SOLID, 1, RGB(min(255, int(GetRValue(c)*K2)), 
+		min(255, int(GetRValue(c)*K2)), min(255, int(GetBValue(c)*K2))));
+}
+
+void delPenBrush()
+{
+	SelectObject(dc, GetStockObject(NULL_PEN));
+	SelectObject(dc, GetStockObject(NULL_BRUSH));
+	for(int *p=penIndex; *p>=0; p++)
+		DeleteObject(pens[*p]);
+	for(int *p=brushIndex; *p>=0; p++)
+		DeleteObject(brushes[*p]);
+	DeleteObject(penDark);
+	DeleteObject(penLight);
+}
+//---------------------------------------------------------------------------
 //redraw block
-void paint(PSquare p)
+void paint1(PSquare p)
 {
 	RECT rc;
 	HBRUSH br;
-	HGDIOBJ oldBrush, oldPen;
 	int cl;
 	int x, y, xt, yt;
 	bool isOpened;
@@ -453,8 +482,8 @@ void paint(PSquare p)
 	if(vizv && p->def) cl=clvi;
 	if(looser && p==bum) cl=clBlast;
 	if(isOpened) cl=clOpened;
-	br= CreateSolidBrush(colors[cl]);
-	if(triang){
+	br= brushes[cl];
+	if(triang){ //triangular
 		POINT b[3];
 		b[0].x= rc.right;
 		b[1].x= rc.left+1;
@@ -470,13 +499,10 @@ void paint(PSquare p)
 			b[2].y= b[1].y= rc.top;
 			y-= (gridy>>3);
 		}
-		oldPen= SelectObject(dc, GetStockObject(NULL_PEN));
-		oldBrush= SelectObject(dc, br);
+		SelectObject(dc, GetStockObject(NULL_PEN));
+		SelectObject(dc, br);
 		Polygon(dc, b, 3);
-		SelectObject(dc, oldPen);
-		SelectObject(dc, oldBrush);
-		oldPen= SelectObject(dc,
-			CreatePen(PS_SOLID, 1, isOpened ? colors[clOpened] : clLight));
+		SelectObject(dc, isOpened ? pens[clOpened] : penLight);
 		if(p->diroff==diroff12a){
 			MoveToEx(dc, b[1].x, b[1].y, 0);
 			LineTo(dc, b[0].x, b[0].y);
@@ -486,8 +512,7 @@ void paint(PSquare p)
 			MoveToEx(dc, b[1].x, b[1].y, 0);
 			LineTo(dc, b[2].x, b[2].y);
 		}
-		DeleteObject(SelectObject(dc,
-			CreatePen(PS_SOLID, 1, isOpened ? colors[clGrid] : clDark)));
+		SelectObject(dc, isOpened ? pens[clGrid] : penDark);
 		if(p->diroff==diroff12a){
 			LineTo(dc, b[1].x-1, b[1].y);
 		}
@@ -495,10 +520,9 @@ void paint(PSquare p)
 			LineTo(dc, b[0].x, b[0].y);
 			LineTo(dc, b[1].x, b[1].y);
 		}
-		DeleteObject(SelectObject(dc, oldPen));
 		x= rc.left+gridx;
 	}
-	else{
+	else{ //rectangular
 		if(!isOpened){
 			rc.left++;
 			rc.top++;
@@ -506,8 +530,7 @@ void paint(PSquare p)
 		rc.bottom--;
 		rc.right--;
 		FillRect(dc, &rc, br);
-		oldPen= SelectObject(dc,
-			CreatePen(PS_SOLID, 1, isOpened ? colors[clGrid] : clLight));
+		SelectObject(dc, isOpened ? pens[clGrid] : penLight);
 		if(isOpened){
 			MoveToEx(dc, rc.right, rc.top, 0);
 		}
@@ -517,13 +540,11 @@ void paint(PSquare p)
 			MoveToEx(dc, rc.left, rc.bottom, 0);
 			LineTo(dc, rc.left, rc.top);
 			LineTo(dc, rc.right, rc.top);
-			DeleteObject(SelectObject(dc, CreatePen(PS_SOLID, 1, clDark)));
+			SelectObject(dc, penDark);
 		}
 		LineTo(dc, rc.right, rc.bottom);
 		LineTo(dc, rc.left-1, rc.bottom);
-		DeleteObject(SelectObject(dc, oldPen));
 	}
-	DeleteObject(br);
 
 	xt= x-xCh;
 	yt= y-yCh;
@@ -553,9 +574,8 @@ void paint(PSquare p)
 			else{
 				//flag
 				charOut(xt+2, yt-5, '>', 0x50c0);
-				oldPen=SelectObject(dc, GetStockObject(BLACK_PEN));
+				SelectObject(dc, GetStockObject(BLACK_PEN));
 				line(x-2, y-9, x-2, y+9);
-				SelectObject(dc, oldPen);
 			}
 		}
 		else if(p->mine && (looser || vizmin)){
@@ -573,6 +593,13 @@ void paint(PSquare p)
 		}
 	}
 }
+
+void paint(PSquare p)
+{
+	initPenBrush();
+	paint1(p);
+	delPenBrush();
+}
 //---------------------------------------------------------------------------
 void drawGraph(int cl)
 {
@@ -586,7 +613,7 @@ void drawGraph(int cl)
 		if(2*grafTab[i]>y0) dbl=0;
 	}
 	x=remainW;
-	dx= (Width-90-x)/Dgraf;
+	dx= (Width-95-x)/Dgraf;
 	b=true;
 	for(i=startGraf; i<Dgraf; i++){
 		y= y0 - (grafTab[(Igraf+i)%Dgraf] << dbl) - 1;
@@ -723,14 +750,6 @@ void repaint()
 	PAINTSTRUCT ps;
 
 	BeginPaint(hWin, &ps);
-	COLORREF c=colors[clField];
-	const double K1=0.65;
-	clLight=RGB(int(GetRValue(c)*K1), int(GetRValue(c)*K1), int(GetBValue(c)*K1));
-	const double K2=1.3;
-	clLight=RGB(min(255, int(GetRValue(c)*K2)),
-		 min(255, int(GetRValue(c)*K2)), min(255, int(GetBValue(c)*K2)));
-
-	drawGraph(clgraf);
 
 	SetTextColor(dc, colors[clText]);
 
@@ -752,6 +771,7 @@ void repaint()
 	}
 	if(ps.rcPaint.top < y0){
 		//area below menu
+		drawGraph(clgraf);
 		if(playtime>=0){
 			SetTextAlign(ps.hdc, TA_RIGHT);
 			numOut(440, 2, lng(604, "Time"), playtime);
@@ -767,16 +787,18 @@ void repaint()
 	if(ps.rcPaint.top <= yk  &&  ps.rcPaint.bottom >= y0){
 		//field
 		if(board){
+			initPenBrush();
 			if(triang){
 				for(p=board; p<boardk; p++)
-					if(p->diroff==diroff12b && p->lock<99) paint(p);
+					if(p->diroff==diroff12b && p->lock<99) paint1(p);
 				for(p=board; p<boardk; p++)
-					if(p->diroff==diroff12a && p->lock<99) paint(p);
+					if(p->diroff==diroff12a && p->lock<99) paint1(p);
 			}
 			else{
 				for(p=board; p<boardk; p++)
-					if(p->lock<99) paint(p); //all block except border
+					if(p->lock<99) paint1(p); //all block except border
 			}
+			delPenBrush();
 		}
 	}
 
