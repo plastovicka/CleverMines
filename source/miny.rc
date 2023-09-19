@@ -304,7 +304,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 4,2,0,3
+ FILEVERSION 4,3,0,0
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -323,7 +323,7 @@ BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", " \0"
             VALUE "FileDescription", "Clever Mines\0"
-            VALUE "FileVersion", "4, 2, 0, 3\0"
+            VALUE "FileVersion", "4, 3, 0, 0\0"
             VALUE "InternalName", "\0"
             VALUE "LegalCopyright", "© 2004-2023 Petr Laštovièka\0"
             VALUE "LegalTrademarks", "\0"
