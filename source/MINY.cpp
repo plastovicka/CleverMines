@@ -431,9 +431,10 @@ void addScore()
 //---------------------------------------------------------------------------
 void initPenBrush()
 {
-	for(int *p=penIndex; *p>=0; p++)
+	int *p;
+	for(p=penIndex; *p>=0; p++)
 		pens[*p]=CreatePen(PS_SOLID, 1, colors[*p]);
-	for(int *p=brushIndex; *p>=0; p++)
+	for(p=brushIndex; *p>=0; p++)
 		brushes[*p]=CreateSolidBrush(colors[*p]);
 	
 	COLORREF c=colors[clField];
@@ -448,9 +449,10 @@ void delPenBrush()
 {
 	SelectObject(dc, GetStockObject(NULL_PEN));
 	SelectObject(dc, GetStockObject(NULL_BRUSH));
-	for(int *p=penIndex; *p>=0; p++)
+	int *p;
+	for(p=penIndex; *p>=0; p++)
 		DeleteObject(pens[*p]);
-	for(int *p=brushIndex; *p>=0; p++)
+	for(p=brushIndex; *p>=0; p++)
 		DeleteObject(brushes[*p]);
 	DeleteObject(penDark);
 	DeleteObject(penLight);

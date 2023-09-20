@@ -43,4 +43,15 @@
       <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="source\mine1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\mine3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\mine2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

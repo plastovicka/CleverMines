@@ -163,9 +163,9 @@ BEGIN
     CTEXT           "Date",514,66,4,52,8
     CTEXT           "Size",515,138,4,33,8
     CTEXT           "Level",516,171,4,34,8
-    CTEXT           "Time",517,216,4,21,8
+    CTEXT           "Time",517,213,4,24,8
     CTEXT           "Rate",518,240,4,35,8
-    CONTROL         "",-1,"Static",SS_BLACKFRAME,212,3,63,9
+    CONTROL         "",-1,"Static",SS_BLACKFRAME,211,3,64,9
     CONTROL         "",-1,"Static",SS_BLACKFRAME,134,3,73,9
     CONTROL         "",-1,"Static",SS_BLACKFRAME,4,3,126,9
     RTEXT           "Mines:",519,3,123,40,8
@@ -176,16 +176,16 @@ BEGIN
     PUSHBUTTON      "24%",224,162,122,24,11
 END
 
-NAME DIALOG DISCARDABLE  40, 25, 153, 55
+NAME DIALOG DISCARDABLE  40, 25, 170, 55
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "High score"
 FONT 9, "MS Shell Dlg"
 BEGIN
     LTEXT           "Your name :",520,5,15,55,8
     EDITTEXT        101,65,13,72,12
-    DEFPUSHBUTTON   "Show scores",534,49,36,64,14
+    DEFPUSHBUTTON   "Show scores",534,49,36,77,14
     PUSHBUTTON      "OK",535,5,36,40,14
-    PUSHBUTTON      "Cancel",IDCANCEL,117,36,32,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,36,34,14
 END
 
 ABOUT DIALOG DISCARDABLE  52, 18, 123, 121
@@ -304,7 +304,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 4,3,0,0
+ FILEVERSION 4,3,0,1
  PRODUCTVERSION 0,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -323,7 +323,7 @@ BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", " \0"
             VALUE "FileDescription", "Clever Mines\0"
-            VALUE "FileVersion", "4, 3, 0, 0\0"
+            VALUE "FileVersion", "4, 3, 0, 1\0"
             VALUE "InternalName", "\0"
             VALUE "LegalCopyright", "© 2004-2023 Petr Laštovièka\0"
             VALUE "LegalTrademarks", "\0"
@@ -354,6 +354,11 @@ BEGIN
     "HISCORE", DIALOG
     BEGIN
         RIGHTMARGIN, 276
+    END
+
+    "NAME", DIALOG
+    BEGIN
+        RIGHTMARGIN, 153
     END
 
     "COLORS", DIALOG

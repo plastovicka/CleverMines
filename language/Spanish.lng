@@ -1,0 +1,102 @@
+#CP1252
+13=Miny.txt
+
+400=&Juego
+100=&Juego nuevo\tF2
+111=&Puntuaciones altas...\tF3
+116=&Colores...\tF4
+118=&Opciones...
+101=&Acercar\t+
+102=A&lejar\t-
+110=Eliminar configuración
+117=Eliminar sus puntuaciones
+401=&Idioma
+105=&Salir\tAlt+X
+
+402=&Tamaño
+114=Campo t&riangular
+115=&Campo cuádruple
+450=&Principiante
+451=&Intermedio
+452=&Experto
+106=Per&sonalizado...\tF5
+
+403=&Minas
+12=12%
+15=15%
+18=18%
+21=21%
+24=24%
+107=&Personalizado...\tF6
+
+404=&Nivel
+201=M&uy fácil
+202=&Fácil
+203=&Medio
+204=&Difícil
+205=Mu&y difícil
+
+405=&Ayuda
+120=&Léame
+121=&Acerca de...
+
+612=Personalizado
+511=Ancho:
+510=Altura:
+512=Minas:
+1=OK
+2=Cancelar
+
+607=Puntuaciones altas -
+608=campo triangular
+609=campo rectangular
+513=Nombre
+514=Fecha
+515=Tamaño
+516=Nivel
+517=Tiempo
+518=Rapidez
+519=Minas:
+
+610=Puntuación alta
+520=Tu nombre:
+534=Mostrar puntuaciones
+535=OK
+
+11=Acerca de
+503=Versión
+502=Este programa es gratuito.
+
+611=Colores
+521=Bloque abierto
+522=Campo
+523=Fondo
+524=Marca incorrecta
+525=Gráfico de rapidez
+526=Mina fatal
+527=Cuadrícula
+528=Texto
+
+613=Opciones
+529=inicio fácil, el primer clic no morirá
+530=no se puede hacer clic en las banderas
+531=botón abajo
+532=botón arriba
+533=Abrir campo cuando:
+
+600=Ancho
+601=Altura
+602=Minas
+603=Rapidez
+604=Tiempo
+605=Restos
+606=Minas inteligentes
+739=Archivo %s no encontrado
+799=¿Realmente deseas eliminar todos sus puntajes?
+735=No se puede escribir en el registro de Windows
+
+755=Error en %s\nLínea %d
+756=Error en %s\nEl número de mensaje %d es demasiado grande
+757=Error en %s\nNúmero duplicado %d
+753=El archivo %s es demasiado largo
+754=Error al leer el archivo %s
