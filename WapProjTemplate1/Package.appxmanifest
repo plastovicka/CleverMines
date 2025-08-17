@@ -9,7 +9,7 @@
   <Identity
     Name="27372PetrLastovicka.97116058A822"
     Publisher="CN=4C184271-24A3-48CE-B17D-DBED3AD635B3"
-    Version="4.3.0.0" />
+    Version="4.4.0.0" />
 
   <Properties>
     <DisplayName>Clever Mines</DisplayName>

@@ -55,6 +55,7 @@ Co je nového
  30.5.2023 - lze to nainstalovat z Microsoft Store
  17.7.2023 - ukládá se pozice okna
  19.9.2023 - prostøední tlaèítko myši na èísle
+ 17.8.2025 - nejlepší èasy se ukládají do Windows registrù aktuálního uživatele
 
 Licence
 -------

@@ -278,27 +278,15 @@ void writeini()
 void writeScore()
 {
 	HKEY key;
-	DWORD i;
 
 	for(char *s=(char*)score; s<((char*)score)+sizeof(score); s++)
-	 if(*s){
-		 if(RegCreateKey(HKEY_LOCAL_MACHINE, subkey, &key)==ERROR_SUCCESS){
+	 if(*s){ //table is not empty
+		 if(RegCreateKey(HKEY_CURRENT_USER, subkey, &key)==ERROR_SUCCESS){
 			 RegSetValueEx(key, "SCORE", 0, REG_BINARY, (BYTE *)score, sizeof(score));
 			 RegCloseKey(key);
 		 }
 		 return;
 	 }
-	//table is empty => delete it
-	if(RegDeleteKey(HKEY_LOCAL_MACHINE, subkey)==ERROR_SUCCESS){
-		if(RegOpenKey(HKEY_LOCAL_MACHINE,
-			"Software\\Petr Lastovicka", &key)==ERROR_SUCCESS){
-			i=1;
-			RegQueryInfoKey(key, 0, 0, 0, &i, 0, 0, 0, 0, 0, 0, 0);
-			RegCloseKey(key);
-			if(!i)
-			 RegDeleteKey(HKEY_LOCAL_MACHINE, "Software\\Petr Lastovicka");
-		}
-	}
 }
 //---------------------------------------------------------------------------
 DWORD getVer()
@@ -944,6 +932,7 @@ void readini()
 	HKEY key;
 	DWORD d;
 	int i;
+	bool hasScore = false;
 
 	if(RegOpenKey(HKEY_CURRENT_USER, subkey, &key)==ERROR_SUCCESS){
 		for(int k=0; k<sizeA(regVal); k++){
@@ -954,10 +943,11 @@ void readini()
 		RegQueryValueEx(key, "language", 0, 0, (BYTE *)lang, &d);
 		d=sizeof(colors);
 		RegQueryValueEx(key, "colors", 0, 0, (BYTE *)colors, &d);
+		d=sizeof(score);
+		hasScore = RegQueryValueEx(key, "SCORE", 0, 0, (BYTE *)score, &d) == ERROR_SUCCESS;
 		RegCloseKey(key);
 	}
-
-	if(RegOpenKey(HKEY_LOCAL_MACHINE, subkey, &key)==ERROR_SUCCESS){
+	if(!hasScore && RegOpenKey(HKEY_LOCAL_MACHINE, subkey, &key)==ERROR_SUCCESS){
 		d=sizeof(score8);
 		RegQueryValueEx(key, "HISCORE", 0, 0, (BYTE *)score8, &d);
 		d=sizeof(score12);
@@ -965,13 +955,13 @@ void readini()
 		d=sizeof(score);
 		RegQueryValueEx(key, "SCORE", 0, 0, (BYTE *)score, &d);
 		RegCloseKey(key);
-	}
-	for(i=0; i<10; i++){
-		TScore s;
-		convertScore(s, score8[i]);
-		addScore(s, getScoreTab(0, score8[i].NminesRel), false);
-		convertScore(s, score12[i]);
-		addScore(s, getScoreTab(1, score12[i].NminesRel), false);
+		for(i=0; i<10; i++){
+			TScore s;
+			convertScore(s, score8[i]);
+			addScore(s, getScoreTab(0, score8[i].NminesRel), false);
+			convertScore(s, score12[i]);
+			addScore(s, getScoreTab(1, score12[i].NminesRel), false);
+		}
 	}
 	strcpy(playerName, score[0][0].name);
 	for(i=0; i<Dtab; i++) lastScore[i]=-1;
